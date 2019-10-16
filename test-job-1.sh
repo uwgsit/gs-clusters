@@ -6,7 +6,7 @@
 #$ -l mfree=2G,h_rt=65
 
 date
-echo "Job ${JOB_ID} started on ${HOSTNAME}" >&2
+echo "Job ${JOB_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
 
 # Python 2 outputs version info to STDERR, requires redirect to capture
 echo "Default Python: $(python --version 2>&1)"

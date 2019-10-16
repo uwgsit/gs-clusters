@@ -11,7 +11,7 @@ echo "Job ${JOB_ID} started on ${HOSTNAME}" >&2
 echo "Default Python: $(python --version)"
 
 . /etc/profile.d/modules.sh
-module load modules{,-init,-gs} python/3.6.4
+module load modules{,-{init,gs}} python/3.6.4
 
 echo "Modules Python: $(python --version)"
 

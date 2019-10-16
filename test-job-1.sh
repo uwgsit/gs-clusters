@@ -8,13 +8,13 @@
 date
 echo "Job ${JOB_ID} started on ${HOSTNAME}" >&2
 
-echo "Default Python: $(python --version)"
+# Python 2 outputs version info to STDERR, requires redirect to capture
+echo "Default Python: $(python --version 2>&1)"
 
 . /etc/profile.d/modules.sh
 module load modules{,-{init,gs}} python/3.6.4
 
-# Python 3 outputs version info to STDERR, requires redirect to capture
-echo "Modules Python: $(python --version 2>&1)"
+echo "Modules Python: $(python --version)"
 
 date
 sleep 60

@@ -4,6 +4,8 @@
 #$ -cwd
 #$ -S /bin/bash
 #$ -l mfree=2G,h_rt=65
+#$ -o ./nobackup/sgeoutput
+#$ -e ./nobackup/sgeoutput
 
 set -e
 

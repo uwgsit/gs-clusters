@@ -13,7 +13,8 @@ echo "Default Python: $(python --version)"
 . /etc/profile.d/modules.sh
 module load modules{,-{init,gs}} python/3.6.4
 
-echo "Modules Python: $(python --version)"
+# Python 3 outputs version info to STDERR, requires redirect to capture
+echo "Modules Python: $(python --version 2>&1)"
 
 date
 sleep 60

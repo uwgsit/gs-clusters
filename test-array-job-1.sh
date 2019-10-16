@@ -6,17 +6,14 @@
 #$ -l mfree=2G,h_rt=65
 #$ -t 1-4:1
 
-date
-echo "Job ${JOB_ID}.${SGE_TASK_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
+set -e
 
-# Python 2 outputs version info to STDERR, requires redirect to capture
-echo "Default Python: $(python --version 2>&1)"
+LOOKUP_FILE="$(pwd)/test-array-job-1.txt"
+if [[ ! -r "${LOOKUP_FILE}" ]]; then
+    echo "Cannot find ${LOOKUP_FILE}" >&2
+    exit 1
+fi
 
-. /etc/profile.d/modules.sh
-module load modules{,-{init,gs}} python/3.6.4
+LOOKUP=$(awk -v SGE_TASK_ID="${SGE_TASK_ID}" '$1 == SGE_TASK_ID {print $2}' < "${LOOKUP_FILE}")
 
-echo "Modules Python: $(python --version)"
-
-date
-sleep 60
-echo "Job ${JOB_ID}.${SGE_TASK_ID} ended" >&2
+echo "${JOB_ID}.${SGE_TASK_ID} looked up ${LOOKUP}"

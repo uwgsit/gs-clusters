@@ -5,6 +5,8 @@
 #$ -S /bin/bash
 #$ -l mfree=2G,h_rt=65
 
+set -e
+
 date
 echo "Job ${JOB_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
 

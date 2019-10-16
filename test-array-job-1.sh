@@ -16,6 +16,7 @@ fi
 
 LOOKUP=$(awk -v SGE_TASK_ID="${SGE_TASK_ID}" '$1 == SGE_TASK_ID {print $2}' < "${LOOKUP_FILE}")
 
-echo "${JOB_ID}.${SGE_TASK_ID} looked up ${LOOKUP}"
+# Use stdbuf to force echo to flush at the end of the line, rather than wait for job completion
+stdbuf -o L echo "${JOB_ID}.${SGE_TASK_ID} looked up ${LOOKUP}"
 
 sleep 60

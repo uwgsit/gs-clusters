@@ -5,6 +5,7 @@
 #$ -S /bin/bash
 #$ -l mfree=500M,h_rt=65
 #$ -t 1-4:1
+#$ -tc 2
 
 set -e
 

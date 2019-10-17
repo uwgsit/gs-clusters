@@ -2,10 +2,11 @@
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash
-#$ -l mfree=50G,h_rt=35
+#$ -l mfree=10G,h_rt=35
 #$ -o ./nobackup/sgeoutput
 #$ -e ./nobackup/sgeoutput
-#$ -t 1-10
+#$ -t 1-5
+#$ -pe serial 2
 
 set -e
 

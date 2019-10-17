@@ -1,17 +1,17 @@
-# CHANGE FOR CLASS
 #$ -R y
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash
-#$ -l mfree=50G,h_rt=65
+#$ -l mfree=50G,h_rt=35
 #$ -o ./nobackup/sgeoutput
 #$ -e ./nobackup/sgeoutput
+#$ -t 1-10
 
 set -e
 
 date
 echo "Job ${JOB_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
 
-sleep 60
+sleep 30
 date
 echo "Job ${JOB_ID} ended" >&2

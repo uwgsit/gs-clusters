@@ -1,6 +1,6 @@
 EXPENDABLES = fib fib_omp
 CC = cc
-CFLAGS = -Wall
+CFLAGS = 
 
 fib: fib.c
 	$(CC) $(CFLAGS) $< -o $@

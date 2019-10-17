@@ -20,6 +20,6 @@ module load modules{,-{init,gs}} python/3.6.4
 
 echo "Modules Python: $(python --version)"
 
-date
 sleep 60
+date
 echo "Job ${JOB_ID} ended" >&2

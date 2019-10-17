@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <omp.h>
 #include <getopt.h>
+#include <errno.h>
+#include <string.h>
 
 unsigned long int fib(unsigned int);
 void usage();
@@ -15,7 +17,13 @@ int main(int argc,char **argv) {
     while((c = getopt(argc,argv,"n:")) != -1) {
         switch(c) {
             case 'n':
+                errno = 0;
                 n = (unsigned long int)strtoul(optarg, (char **)NULL, 10);
+                if(errno) {
+                    fprintf(stderr,"Invalid input %s: %s\n",optarg,strerror(errno));
+                    usage();
+                    exit(EXIT_FAILURE);
+                }
                 break;
             case '?':
                 usage();
@@ -28,7 +36,7 @@ int main(int argc,char **argv) {
         }
     }
 
-    if(n == 0) {
+    if(n < 1) {
         fprintf(stderr,"Supply number of Fibonaccis to calculated\n");
         usage();
         exit(EXIT_FAILURE);

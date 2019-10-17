@@ -9,7 +9,7 @@
 
 set -e
 
-make fib
+make fib_omp
 
 FIB_NUM="$1"
 if [[ "x${FIB_NUM}" = "x" ]]; then
@@ -17,5 +17,6 @@ if [[ "x${FIB_NUM}" = "x" ]]; then
     exit 1
 fi
 
-echo -n "Fibonacci number ${FIB_NUM} is "
-./fib -n "${FIB_NUM}"
+export OMP_NUM_THREADS="${NSLOTS}"
+echo -n "(Using ${NSLOTS} threads) Fibonacci number ${FIB_NUM} is "
+./fib_omp -n "${FIB_NUM}"

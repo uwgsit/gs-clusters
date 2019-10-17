@@ -7,3 +7,7 @@ fib: fib.c
 
 fib_omp: fib.c
 	$(CC) $(CFLAGS) -fopenmp $< -o $@
+
+.PHONY:
+clean:
+	/bin/rm -f $(EXPENDABLES)

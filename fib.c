@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <string.h>
 
-unsigned long int fib(unsigned int);
+unsigned long int fib(unsigned long int);
 void usage();
 
 int main(int argc,char **argv) {
@@ -62,8 +62,8 @@ void usage() {
     fprintf(stderr,"Calculates the first n Fibonacci numbers\n");
 }
 
-unsigned long int fib(unsigned int n) {
-    unsigned int local_n,n1,n2;
+unsigned long int fib(unsigned long int n) {
+    unsigned long int local_n,n1,n2;
     if(n < 2) {
         return n;
     }

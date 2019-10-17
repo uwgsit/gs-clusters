@@ -50,7 +50,7 @@ int main(int argc,char **argv) {
         }
     }
 
-    printf("%lu\n",fib(n));
+    printf("%lu\n",fib_n);
 
     exit(EXIT_SUCCESS);
 }

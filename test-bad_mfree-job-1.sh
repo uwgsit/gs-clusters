@@ -10,4 +10,4 @@
 set -e
 
 make malloc
-./malloc -n 30000000
+./malloc -n 100000000

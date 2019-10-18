@@ -20,7 +20,7 @@ fi
 LOOKUP=$(awk -v SGE_TASK_ID="${SGE_TASK_ID}" '$1 == SGE_TASK_ID {print $2}' < "${LOOKUP_FILE}")
 
 if [[ "x${LOOKUP}" = "x" ]]; then
-    echo "Failed to lookup task ID" >&2
+    echo "Task ${SGE_TASK_ID} failed to lookup task ID" >&2
     exit 1
 fi
 

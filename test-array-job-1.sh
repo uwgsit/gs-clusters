@@ -1,5 +1,5 @@
 # CHANGE FOR CLASS
-#$ -ar 10440
+#$ -ar 10442
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash
@@ -18,6 +18,11 @@ if [[ ! -r "${LOOKUP_FILE}" ]]; then
 fi
 
 LOOKUP=$(awk -v SGE_TASK_ID="${SGE_TASK_ID}" '$1 == SGE_TASK_ID {print $2}' < "${LOOKUP_FILE}")
+
+if [[ "x${LOOKUP}" = "x" ]]; then
+    echo "Failed to lookup task ID" >&2
+    exit 1
+fi
 
 # Use stdbuf to force echo to flush at the end of the line, rather than wait for job completion
 stdbuf -o L echo "${JOB_ID}.${SGE_TASK_ID} looked up ${LOOKUP}"

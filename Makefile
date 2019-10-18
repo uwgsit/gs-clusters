@@ -11,6 +11,6 @@ fib_omp: fib.c
 malloc: malloc.c
 	$(CC) $(CFLAGS) $< -o $@
 
-.PHONY:
+.PHONY: clean
 clean:
 	/bin/rm -f $(EXPENDABLES)

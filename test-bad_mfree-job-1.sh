@@ -9,4 +9,5 @@
 
 set -e
 
-dd if=/dev/zero of=/dev/null bs=2G count=1
+make malloc
+./malloc -n "$(getconf ULONG_MAX)"

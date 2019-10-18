@@ -1,4 +1,4 @@
-EXPENDABLES = fib fib_omp
+EXPENDABLES = fib fib_omp malloc
 CC = cc
 CFLAGS = 
 

@@ -49,6 +49,8 @@ int main(int argc,char **argv) {
         ns[i] = i;
     }
 
+    printf("Processed %lu unsigned long ints\n",n);
+
     exit(EXIT_SUCCESS);
 }
 

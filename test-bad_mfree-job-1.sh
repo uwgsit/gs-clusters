@@ -3,11 +3,11 @@
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash
-#$ -l mfree=500M,h_rt=65
+#$ -l mfree=200M,h_rt=0:5:0
 #$ -o ./nobackup/sgeoutput
 #$ -e ./nobackup/sgeoutput
 
 set -e
 
 make malloc
-./malloc -n "$(getconf ULONG_MAX)"
+./malloc -n 30000000

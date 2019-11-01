@@ -1,6 +1,3 @@
-# CHANGE FOR CLASS
-#$ -ar 10437
-#$ -P sage
 #$ -cwd
 #$ -S /bin/bash
 #$ -l mfree=1G,h_rt=65

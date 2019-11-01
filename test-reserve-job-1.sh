@@ -1,5 +1,4 @@
 #$ -R y
-#$ -P sage
 #$ -cwd
 #$ -S /bin/bash
 #$ -l mfree=4G,h_rt=35

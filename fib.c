@@ -1,4 +1,4 @@
-// Based on IWOMP tutorial
+// Based on IWOMP 2010 tutorial (URL no longer available)
 
 #include <stdlib.h>
 #include <stdio.h>

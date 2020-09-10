@@ -68,7 +68,7 @@ unsigned long int fib(unsigned long int n) {
         return n;
     }
 
-    // Execute serially for the bottom part of the sequence to avoid spawning too many threads
+    // Execute serially for the bottom part of the sequence to avoid spawning too many short-lived threads
     if(n < 20) {
         return fib(n-1) + fib(n-2);
     }

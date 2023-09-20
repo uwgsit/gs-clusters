@@ -18,6 +18,7 @@ int main(int argc,char **argv) {
     double *vecA,*vecB,*vecC,sum;
 
     n = i = 0;
+    sum = 0,0;
 
     while((c = getopt(argc,argv,"n:")) != -1) {
         switch(c) {
@@ -59,11 +60,22 @@ int main(int argc,char **argv) {
         vecB[i] = pow(vecA[i],2);
     }
 
-    for(i=0;i<n;i++) {
-        vecC[i] = vecA[i] + vecB[i];
+#ifdef _OPENACC
+    {
+#pragma acc parallel
+        {
+#pragma acc loop
+            {
+#endif
+                for(i=0;i<n;i++) {
+                    vecC[i] = vecA[i] + vecB[i];
+                }
+#ifdef _OPENACC
+            }
+        }
     }
+#endif
 
-    sum = 0,0;
     for(i=0;i<n;i++) {
         sum += vecC[i];
     }

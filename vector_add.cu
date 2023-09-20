@@ -14,6 +14,7 @@ int main(int argc,char **argv) {
     int c,device,device_count;
     unsigned long int i,blocks,threads,n;
     double *vecA,*vecB,*vecC,*d_vecA,*d_vecB,*d_vecC,sum;
+    cudaError_t cuda_error;
 
     n = 0;
     blocks = threads = 1;
@@ -96,7 +97,12 @@ int main(int argc,char **argv) {
     cudaMemcpy(d_vecA,vecA,sizeof(double) * n,cudaMemcpyHostToDevice);
     cudaMemcpy(d_vecB,vecB,sizeof(double) * n,cudaMemcpyHostToDevice);
 
-    vector_add<<<1,threads>>>(d_vecA,d_vecB,d_vecC,n);
+    vector_add<<<blocks,threads>>>(d_vecA,d_vecB,d_vecC,n);
+    cuda_error = cudaGetLastError();
+    if(cuda_error != cudaSuccess) {
+        fprintf(stderr,"CUDA error: %s\n",cudaGetErrorString(cuda_error));
+        exit(EXIT_FAILURE);
+    }
 
     cudaMemcpy(vecC,d_vecC,sizeof(double) * n,cudaMemcpyDeviceToHost);
 

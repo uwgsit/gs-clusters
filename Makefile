@@ -1,4 +1,4 @@
-EXPENDABLES = fib fib_omp malloc
+EXPENDABLES = fib fib_omp
 CC = cc
 CFLAGS = 
 
@@ -7,9 +7,6 @@ fib: fib.c
 
 fib_omp: fib.c
 	$(CC) $(CFLAGS) -fopenmp $< -o $@
-
-malloc: malloc.c
-	$(CC) $(CFLAGS) $< -o $@
 
 .PHONY: clean
 clean:

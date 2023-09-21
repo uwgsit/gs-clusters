@@ -10,7 +10,7 @@ fib_omp: fib.c
 	$(CC) $(CFLAGS) -fopenmp $< -o $@
 
 vector_add: vector_add.c
-	$(CC) $(CFLAGS) $< -o $@ -lm
+	$(CC) $(CFLAGS) -pg $< -o $@ -lm
 
 vector_add_cuda: vector_add.cu
 	$(NVCC) $(CFLAGS) $< -o $@ -lm

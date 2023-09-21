@@ -110,7 +110,7 @@ int main(int argc,char **argv) {
         sum += vecC[i];
     }
 
-    printf("Sum: %18.16f\n", sum);
+    printf("Sum: %18.1f\n", sum);
 
     free(vecC);
     free(vecB);

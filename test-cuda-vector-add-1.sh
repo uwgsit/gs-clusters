@@ -9,7 +9,7 @@
 set -e
 
 # Use older CUDA for compatibility with older GPUs
-module load cuda/10.0
+module load cuda/11.7.1
 
 make vector_add_cuda
 
@@ -22,4 +22,4 @@ if [[ "x${VECTOR_SIZE}" = "x" || "x${BLOCK_COUNT}" = "x" || "x${THREAD_COUNT}" =
     exit 1
 fi
 
-time ./vector_add_cuda -n "${VECTOR_SIZE}" -b "${BLOCK_COUNT}" -t "${THREAD_COUNT}"
+time nsys profile --stats=true ./vector_add_cuda -n "${VECTOR_SIZE}" -b "${BLOCK_COUNT}" -t "${THREAD_COUNT}"

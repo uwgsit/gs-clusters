@@ -6,7 +6,7 @@
 #include <math.h>
 
 void usage();
-double vector_reduce_add(double *,double *,double *,const unsigned long int);
+void vector_add(double *,double *,double *,const unsigned long int);
 
 int main(int argc,char **argv) {
     int c;
@@ -57,7 +57,13 @@ int main(int argc,char **argv) {
         vecB[i] = pow(vecA[i],2);
     }
 
-    printf("Sum: %18.16f\n", vector_reduce_add(vecA,vecB,vecC,n));
+    vector_add(vecA,vecB,vecC,n);
+
+    for(i=0;i<n;i++) {
+        sum += vecC[i];
+    }
+
+    printf("Sum: %18.1f\n", sum);
 
     free(vecC),
     free(vecB),
@@ -71,17 +77,10 @@ void usage() {
     fprintf(stderr,"Initializes two vectors, adds them\n");
 }
 
-double vector_reduce_add(double *vecA,double *vecB,double *vecC,const unsigned long int n) {
+void vector_add(double *vecA,double *vecB,double *vecC,const unsigned long int n) {
     unsigned long int i;
-    double sum = 0.0;
 
     for(i=0;i<n;i++) {
         vecC[i] = vecA[i] + vecB[i];
     }
-
-    for(i=0;i<n;i++) {
-        sum += vecC[i];
-    }
-
-    return sum;
 }

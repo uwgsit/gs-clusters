@@ -59,9 +59,9 @@ int main(int argc,char **argv) {
 
     printf("Sum: %18.16f\n", vector_reduce_add(vecA,vecB,vecC,n));
 
-    free(vecA),
-    free(vecB),
     free(vecC),
+    free(vecB),
+    free(vecA),
 
     exit(EXIT_SUCCESS);
 }

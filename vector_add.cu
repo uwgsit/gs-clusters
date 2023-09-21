@@ -112,12 +112,12 @@ int main(int argc,char **argv) {
 
     printf("Sum: %18.16f\n", sum);
 
-    free(vecA);
-    free(vecB);
     free(vecC);
-    cudaFree(d_vecA);
-    cudaFree(d_vecB);
+    free(vecB);
+    free(vecA);
     cudaFree(d_vecC);
+    cudaFree(d_vecB);
+    cudaFree(d_vecA);
 
     exit(EXIT_SUCCESS);
 }

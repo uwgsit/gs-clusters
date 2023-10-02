@@ -123,7 +123,7 @@ int main(int argc,char **argv) {
 }
 
 void usage() {
-    fprintf(stderr,"vector_add -n <vector-size> -t <threads-per-block>\n");
+    fprintf(stderr,"vector_add -n <vector-size> -b <blocks> -t <threads-per-block>\n");
     fprintf(stderr,"Initializes two vectors, adds them\n");
 }
 

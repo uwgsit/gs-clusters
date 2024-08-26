@@ -1,7 +1,7 @@
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash
-#$ -l mfree=16G,h_rt=0:5:0,cuda=1
+#$ -l mfree=24G,h_rt=0:2:0,cuda=1
 #$ -R y
 #$ -o ./nobackup/sgeoutput
 #$ -e ./nobackup/sgeoutput

@@ -1,6 +1,6 @@
 # shellcheck disable=SC3009,SC1091
 # CHANGE FOR CLASS
-#$ -ar 6
+#$ -ar 4
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash

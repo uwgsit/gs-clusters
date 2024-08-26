@@ -8,9 +8,6 @@
 
 set -e
 
-# Use older CUDA for compatibility with older GPUs
-module load cuda/11.7.1
-
 make vector_add_cuda
 
 VECTOR_SIZE="$1"

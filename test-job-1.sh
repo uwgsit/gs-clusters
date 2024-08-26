@@ -16,7 +16,7 @@ echo "Job ${JOB_ID} started on $(hostname -s) with ${NSLOTS} slots" >&2
 echo "Default Python: $(python3 --version)"
 
 . /etc/profile.d/modules.sh
-module load modules{,-{init,gs}} python/3.6.4
+module load modules{,-{init,gs}} python/3.12.1
 
 echo "Modules Python: $(python --version)"
 

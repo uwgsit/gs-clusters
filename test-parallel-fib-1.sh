@@ -12,11 +12,11 @@ set -e
 make fib_omp
 
 FIB_NUM="$1"
-if [[ "x${FIB_NUM}" = "x" ]]; then
+if [ -z "${FIB_NUM}" ]; then
     echo "Supply Fibonacci number to calculate" >&2
     exit 1
 fi
 
 export OMP_NUM_THREADS="${NSLOTS}"
-echo -n "(Using ${NSLOTS} threads) Fibonacci number ${FIB_NUM} is "
+printf "(Using %d threads) Fibonacci number %d is " "${NSLOTS}" "${FIB_NUM}"
 ./fib_omp -n "${FIB_NUM}"

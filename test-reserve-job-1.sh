@@ -10,7 +10,7 @@
 set -e
 
 date
-echo "Job ${JOB_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
+echo "Job ${JOB_ID} started on $(hostname -s) with ${NSLOTS} slots" >&2
 
 sleep 30
 date

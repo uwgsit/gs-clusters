@@ -10,7 +10,7 @@ set -e
 make vector_add
 
 VECTOR_SIZE="$1"
-if [[ "x${VECTOR_SIZE}" = "x" ]]; then
+if [ -z "${VECTOR_SIZE}" ]; then
     echo "Supply vector size" >&2
     exit 1
 fi

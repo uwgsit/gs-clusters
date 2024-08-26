@@ -17,7 +17,7 @@ VECTOR_SIZE="$1"
 BLOCK_COUNT="$2"
 THREAD_COUNT="$3"
 
-if [[ "x${VECTOR_SIZE}" = "x" || "x${BLOCK_COUNT}" = "x" || "x${THREAD_COUNT}" = "x" ]]; then
+if [ -z "${VECTOR_SIZE}" ] || [ -z "${BLOCK_COUNT}" ] || [ -z "${THREAD_COUNT}" ]; then
     echo "Supply vector size, block count, and thread count" >&2
     exit 1
 fi

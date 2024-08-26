@@ -12,14 +12,14 @@
 set -e
 
 LOOKUP_FILE="$(pwd)/test-array-job-1.txt"
-if [[ ! -r "${LOOKUP_FILE}" ]]; then
+if [ ! -r "${LOOKUP_FILE}" ]; then
     echo "Cannot find ${LOOKUP_FILE}" >&2
     exit 1
 fi
 
 LOOKUP="$(awk -v SGE_TASK_ID="${SGE_TASK_ID}" '$1 == SGE_TASK_ID {print $2}' < "${LOOKUP_FILE}")"
 
-if [[ "x${LOOKUP}" = "x" ]]; then
+if [ -z "${LOOKUP}" ]; then
     echo "Task ${SGE_TASK_ID} failed to lookup task ID" >&2
     exit 1
 fi

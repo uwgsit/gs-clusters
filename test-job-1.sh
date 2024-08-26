@@ -1,3 +1,4 @@
+# shellcheck disable=SC3009,SC1091
 # CHANGE FOR CLASS
 #$ -ar 6
 #$ -P sage
@@ -10,10 +11,9 @@
 set -e
 
 date
-echo "Job ${JOB_ID} started on ${HOSTNAME} with ${NSLOTS} slots" >&2
+echo "Job ${JOB_ID} started on $(hostname -s) with ${NSLOTS} slots" >&2
 
-# Python 2 outputs version info to STDERR, requires redirect to capture
-echo "Default Python: $(python --version 2>&1)"
+echo "Default Python: $(python3 --version)"
 
 . /etc/profile.d/modules.sh
 module load modules{,-{init,gs}} python/3.6.4

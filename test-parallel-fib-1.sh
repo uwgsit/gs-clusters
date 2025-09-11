@@ -1,5 +1,5 @@
 # CHANGE FOR CLASS
-#$ -ar 4
+#$ -ar 15
 #$ -P sage
 #$ -cwd
 #$ -S /bin/bash

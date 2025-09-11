@@ -14,3 +14,4 @@ participants.
 
 * [GS Wiki Central Cluster Usage](https://wiki.gs.washington.edu/twiki/bin/view/Main/CentralClusterUsage)
 * [Basic Cluster Usage slides](https://docs.google.com/presentation/d/1U5BRNYMXWL6n8uwmRKfgavlv4e33ak402RERxJgPQ0g/edit?usp=sharing)
+* [Training video (2024)](https://youtu.be/oM6og4K6fSE)

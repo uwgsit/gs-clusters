@@ -17,6 +17,5 @@ if [[ "x${FIB_NUM}" = "x" ]]; then
     exit 1
 fi
 
-export OMP_NUM_THREADS="${NSLOTS}"
 echo -n "(Using ${NSLOTS} threads) Fibonacci number ${FIB_NUM} is "
 ./fib_omp -n "${FIB_NUM}"

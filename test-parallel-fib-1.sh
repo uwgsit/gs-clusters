@@ -17,6 +17,5 @@ if [ -z "${FIB_NUM}" ]; then
     exit 1
 fi
 
-export OMP_NUM_THREADS="${NSLOTS}"
 printf "(Using %d threads) Fibonacci number %d is " "${NSLOTS}" "${FIB_NUM}"
 ./fib_omp -n "${FIB_NUM}"

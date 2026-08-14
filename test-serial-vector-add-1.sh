@@ -4,8 +4,8 @@
 #$ -cwd
 # Request the bash shell
 #$ -S /bin/bash
-# Request 20GB memory and 2 minutes runtime
-#$ -l mfree=20G,h_rt=0:2:0
+# Request 20GB memory and 5 minutes runtime
+#$ -l mfree=20G,h_rt=0:5:0
 # Place STDOUT in a file in ./nobackup/sgeoutput
 #$ -o ./nobackup/sgeoutput
 # Place STDERR in a file in ./nobackup/sgeoutput

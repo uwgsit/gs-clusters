@@ -4,8 +4,8 @@
 #$ -cwd
 # Request the bash shell
 #$ -S /bin/bash
-# Request 20GB memory, 2 minutes of runtime, and one CUDA GPU
-#$ -l mfree=20G,h_rt=0:2:0,cuda=1
+# Request 20GB memory, 5 minutes of runtime, and one CUDA GPU
+#$ -l mfree=20G,h_rt=0:5:0,cuda=1
 # Request a resource reservation
 #$ -R y
 # Place STDOUT in a file in ./nobackup/sgeoutput

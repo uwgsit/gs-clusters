@@ -12,7 +12,7 @@
 #$ -l mfree=1G,h_rt=65
 # Place STDOUT in a file in ./nobackup/sgeoutput
 #$ -o ./nobackup/sgeoutput
-# Place STDERR in a file in ./nobackup/sgeoutpu
+# Place STDERR in a file in ./nobackup/sgeoutput
 #$ -e ./nobackup/sgeoutput
 
 # End the job when any statement returns non-0 (conventionally, an error)

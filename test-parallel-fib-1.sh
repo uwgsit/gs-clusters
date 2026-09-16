@@ -1,6 +1,6 @@
 # CHANGE FOR CLASS
 # Request advance reservation 15
-#$ -ar 15
+#$ -ar 1
 # Request project sage (dept. cluster nodes)
 #$ -P sage
 # Run job from the same directory as qsub

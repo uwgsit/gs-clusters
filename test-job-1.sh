@@ -1,7 +1,7 @@
 # shellcheck disable=SC3009,SC1091
 # CHANGE FOR CLASS
-# # Request advance reservation 15
-#$ -ar 15
+# Request advance reservation 2
+#$ -ar 2
 # Request project sage (dept. cluster nodes)
 #$ -P sage
 # Run job from the same directory as qsub

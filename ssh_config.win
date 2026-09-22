@@ -1,0 +1,26 @@
+# Place in ~/.ssh/config (UNIX) or "$env:USERPROFILE\.ssh" (Windows/Powershell)
+Host *
+    # Replace TCP keepalives with protocol keepalives
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    TCPKeepAlive no
+    # Allow SSH agent to work over multiple hops
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    # Automatically add SSH keys to agent
+    AddKeysToAgent yes
+    ExitOnForwardFailure yes
+    # Additional domains to search for name resolution
+    CanonicalizeHostname yes
+    CanonicalDomains grid.gs.washington.edu gs.washington.edu
+    # Enable ~C for on-the-fly port forwarding (use PermitLocalCommand instead for clients older than v9.2)
+    EnableEscapeCommandline yes
+Host nexus
+    HostName nexus.gs.washington.edu
+    ProxyJump none
+    DynamicForward 1081
+    User GS-name-here
+Host *.gs.washington.edu
+    ProxyJump nexus
+    User GS-name-here

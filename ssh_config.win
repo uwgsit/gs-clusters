@@ -1,4 +1,4 @@
-# Place in ~/.ssh/config (UNIX) or "$env:USERPROFILE\.ssh" (Windows/Powershell)
+# Place in "$env:USERPROFILE\.ssh" (Windows/Powershell)
 Host *
     # Replace TCP keepalives with protocol keepalives
     ServerAliveInterval 60

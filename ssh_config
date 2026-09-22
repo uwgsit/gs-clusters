@@ -13,8 +13,6 @@ Host *
     ControlPath ~/.ssh/control-master/%r@%h:%p
     # Automatically add SSH keys to agent
     AddKeysToAgent yes
-    # For macOS, pull SSH key passphrase from Keychain
-    UseKeychain yes
     ExitOnForwardFailure yes
     # Additional domains to search for name resolution
     CanonicalizeHostname yes
